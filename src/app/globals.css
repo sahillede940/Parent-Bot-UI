@@ -2,32 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #ffffff;
+    --foreground: #e8ebfa;
+    --bot-foreground: #f5f5f5;
+
+    --card: #f5f5f5;
+    --card-foreground: rgb(83, 83, 83);
+
+    --popover: #f5f5f5;
+    --popover-foreground: #242424;
+
+    --primary: #242424;
+    --primary-foreground: #242424;
+
+    --secondary: #f5f5f5;
+    --secondary-foreground: #f5f5f5;
+
+    --muted: none;
+    --muted-foreground: #f5f5f5;
+
+    --accent: rgb(41, 41, 41);
+    --accent-foreground: #f5f5f5;
+
+    --destructive: #f5f5f5;
+    --destructive-foreground:#f5f5f5;
+
+    --border: #242424;
+    --input: #242424;
+    --ring: #242424;
+
+    --radius: 10px;
+  }
+
+  .dark {
+    --background: rgb(31, 31, 31);
+    --foreground: rgb(43,43,63);
+    --bot-foreground: rgb(41,41,41);
+
+    --card: rgb(31, 31, 31);
+    --card-foreground: rgb(237,237,237);
+
+    --popover: rgb(31, 31, 31);
+    --popover-foreground: rgb(31, 31, 31);
+
+    --primary: rgb(187, 187, 193);
+    --primary-foreground: rgb(31, 31, 31);
+
+    --secondary: rgb(31, 31, 31);
+    --secondary-foreground: rgb(31, 31, 31);
+
+    --muted: none;
+    --muted-foreground: none;
+
+    --accent: rgb(215 27.9% 16.9%);
+    --accent-foreground: rgb(210 20% 98%);
+
+    --destructive: rgb(31, 31, 31);
+    --destructive-foreground: rgb(31, 31, 31);
+
+    --border: rgb(187, 187, 193);
+    --input: rgb(187, 187, 193);
+    --ring: rgb(187, 187, 193);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+* {
+  font-size: 14px;
 }

@@ -8,7 +8,6 @@ export default function Home() {
       justifyContent: "flex-end",
       height: "100vh",
       width: "100%",
-    
     }}>
       <Thread/>
     </div>

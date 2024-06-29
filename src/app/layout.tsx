@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { MyRuntimeProvider } from "@/app/MyRuntimeProvider";
 import Home from "@/app/Home";
+import { Theme } from "./constant";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +21,7 @@ export default function RootLayout({
   return (
     <MyRuntimeProvider>
       <html lang="en">
-        <body className={`dark ${inter.className}`}>
+        <body className={`${Theme} ${inter.className}`}>
           <Home />
         </body>
       </html>

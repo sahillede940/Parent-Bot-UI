@@ -1,6 +1,6 @@
-const PHI3_LOCATION = "port";
+const PHI3_LOCATION = "local";
 let URL = "";
-export const Theme = "light";
+export const Theme = "dark";
 
 switch (PHI3_LOCATION) {
   case "local":
